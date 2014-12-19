@@ -31,7 +31,7 @@ var dishCollection = 'dishes'
 var dish = new mongoose.Schema({
 	names:Array,
 	nationality:String,
-	image:String,
+	imageUrl:String,
 	descriptions:Array,
 	ingredients:Array,
 	zone:String
