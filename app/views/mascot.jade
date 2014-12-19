@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  form(action='mascots', method='post')
+      | Enter Name Italian:
+      input(type='text', name='nameItalian', placeholder='Insert category...')
+      |                
+      br
+      | Enter Name English:
+      input(type='text', name='nameEnglish', placeholder='Insert category...')
+      |                
+      br
+      | Enter Category Italian:
+      input(type='text', name='categoryItalian', placeholder='Insert category...')
+      |                
+      br
+      | Enter Category English:
+      input(type='text', name='categoryEnglish', placeholder='Insert category...')
+      |                
+      br
+      |Enter latitude:
+      |                
+      input(type='text', name='latitude', placeholder='Insert latitude...')
+      |                
+      br 
+      |Enter longitude:
+      |                
+      input(type='text', name='longitude', placeholder='Insert longitude...')
+      |                
+      br
+      |Enter model url:
+      |                
+      input(type='text', name='modelUrl', placeholder='Insert image...')
+      |                
+      br                
+      button(type='submit') Submit
+  h1= title
+  each item in mascots
+     p #{item}
+  

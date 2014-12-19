@@ -1,0 +1,294 @@
+extends layout
+
+block content
+    #wrapper
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand(href='index.html') Admin Panel
+        |             
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav.side-nav
+            li.active
+              a(href='/')
+                i.fa.fa-bullseye
+                |  Dashboard
+            |                     
+            li
+              a(href='/ingredients')
+                i.fa.fa-tasks
+                |  Ingredients
+            li
+              a(href='/mascots')
+                i.fa.fa-tasks
+                |  Mascots
+            
+          |                 
+          ul.nav.navbar-nav.navbar-right.navbar-user
+            li.dropdown.messages-dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-envelope
+                |  Messages 
+                span.badge 2
+                |  
+                b.caret
+              |                         
+              ul.dropdown-menu
+                li.dropdown-header 2 New Messages
+                |                             
+                li.message-preview
+                  a(href='#')
+                    span.avatar
+                      i.fa.fa-bell
+                    |                                     
+                    span.message Security alert
+                |                             
+                li.divider
+                |                             
+                li.message-preview
+                  a(href='#')
+                    span.avatar
+                      i.fa.fa-bell
+                    |                                     
+                    span.message Security alert
+                |                             
+                li.divider
+                |                             
+                li
+                  a(href='#')
+                    | Go to Inbox 
+                    span.badge 2
+            |                     
+            li.dropdown.user-dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-user
+                |  Steve Miller
+                b.caret
+              |                        
+              ul.dropdown-menu
+                li
+                  a(href='#')
+                    i.fa.fa-user
+                    |  Profile
+                |                            
+                li
+                  a(href='#')
+                    i.fa.fa-gear
+                    |  Settings
+                |                            
+                li.divider
+                |                            
+                li
+                  a(href='#')
+                    i.fa.fa-power-off
+                    |  Log Out
+      |         
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1
+              | Dashboard 
+              small Dashboard Home
+            |                     
+            .alert.alert-success.alert-dismissable
+              button.close(type='button', data-dismiss='alert', aria-hidden='true') &times;
+              |                         Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs.
+              |                         For the purpose of data visualization, additional widgets are used, so make sure you review all provided information.
+        |             
+        .row
+          .col-lg-3
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-clock-o
+                  | Alerts
+              |                         
+              .panel-body
+                .row.alert-success
+                  .col-xs-5
+                    i.fa.fa-thumbs-o-up.fa-5x
+                  |                                 
+                  .col-xs-5.text-right
+                    p.alerts-heading 343
+                    |                                     
+                    p.alerts-text New Orders
+                |                             
+                .row.alert-success
+                  .col-xs-5
+                    i.fa.fa-thumbs-o-up.fa-5x
+                  |                                 
+                  .col-xs-5.text-right
+                    p.alerts-heading 1256
+                    |                                     
+                    p.alerts-text Registrations
+                |                             
+                .row.alert-danger
+                  .col-xs-5
+                    i.fa.fa-thumbs-o-down.fa-5x
+                  |                                 
+                  .col-xs-5.text-right
+                    p.alerts-heading 4
+                    |                                     
+                    p.alerts-text Errors
+                |                             
+                .row.alert-success
+                  .col-xs-5
+                    i.fa.fa-thumbs-o-up.fa-5x
+                  |                                 
+                  .col-xs-5.text-right
+                    p.alerts-heading 11
+                    |                                     
+                    p.alerts-text Mentions
+          |                 
+          .col-lg-9
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-bar-chart-o
+                  |  Traffic Estimations for last 30 days
+              |                         
+              .panel-body
+                #shieldui-chart1
+        |             
+        .row
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-bar-chart-o
+                  |  Logins per week
+              |                         
+              .panel-body
+                #shieldui-chart2
+          |                 
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-bar-chart-o
+                  |  Budget
+              |                         
+              .panel-body
+                #shieldui-chart3
+          |                 
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-bar-chart-o
+                  |  Purchases
+              |                         
+              .panel-body
+                #shieldui-chart4
+        |             
+        .row
+          .col-lg-12
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title
+                  i.fa.fa-bar-chart-o
+                  |  Sales personnel Data
+              |                         
+              .panel-body
+                #shieldui-grid1
+        // /.row
+      // /#page-wrapper
+    // /#wrapper
+    //
+      This section initializes the chart widgets and a grid component,
+      which visualize records and allow sorting and paging.
+      For more information visit:
+      http://www.shieldui.com/documentation/javascript.chart/getting.started
+      http://www.shieldui.com/documentation/grid/javascript/getting.started
+      http://www.shieldui.com/documentation/datasource/javascript/getting.started
+    script(type='text/javascript').
+      jQuery(function ($) {
+      var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
+      visits = [123, 323, 443, 32],
+      budget = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57],
+      sales = [11, 9, 31, 34, 42, 52, 35, 22, 37, 45, 55, 57];
+      $("#shieldui-chart1").shieldChart({
+      primaryHeader: {
+      text: "Visitors"
+      },
+      exportOptions: {
+      image: false,
+      print: false
+      },
+      dataSeries: [{
+      seriesType: "area",
+      collectionAlias: "Q Data",
+      data: performance
+      }]
+      });
+      $("#shieldui-chart2").shieldChart({
+      primaryHeader: {
+      text: "Logins Per week"
+      },
+      exportOptions: {
+      image: false,
+      print: false
+      },
+      seriesSettings: {
+      donut: {
+      enablePointSelection: true
+      }
+      },
+      dataSeries: [{
+      seriesType: "donut",
+      collectionAlias: "logins",
+      data: visits
+      }]
+      });
+      $("#shieldui-chart3").shieldChart({
+      primaryHeader: {
+      text: "Budget"
+      },
+      dataSeries: [{
+      seriesType: "line",
+      collectionAlias: "Budget",
+      data: budget
+      }]
+      });
+      $("#shieldui-chart4").shieldChart({
+      primaryHeader: {
+      text: "Sales"
+      },
+      dataSeries: [{
+      seriesType: "bar",
+      collectionAlias: "sales",
+      data: sales
+      }]
+      });
+      $("#shieldui-grid1").shieldGrid({
+      dataSource: {
+      data: gridData
+      },
+      sorting: {
+      multiple: true
+      },
+      paging: {
+      pageSize: 12,
+      pageLinksCount: 4
+      },
+      selection: {
+      type: "row",
+      multiple: true,
+      toggle: false
+      },
+      columns: [
+      { field: "id", width: "70px", title: "ID" },
+      { field: "name", title: "Person Name" },
+      { field: "company", title: "Company Name" },
+      { field: "email", title: "Email Address", width: "270px" }
+      ]
+      });
+      });

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  form(action='ingredients', method='post')
+      | Enter ingredient name italian:
+      input(type='text', name='nameItalian', placeholder='Insert name...')
+      |                
+      br
+      | Enter ingredient name english:
+      input(type='text', name='nameEnglish', placeholder='Insert name...')
+      |                
+      br
+      |Select category:
+      |                
+      select(name='category')
+        for item in categories
+          
+          option(value=item) #{item}
+      |                
+      br 
+      |Enter image name:
+      |                
+      input(type='text', name='image', placeholder='Insert image...')
+      |                
+      br
+      |                 
+      button(type='submit') Submit
+  h1= title
+  each item in ingredients
+     p #{item}
+
+
+  
