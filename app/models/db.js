@@ -30,7 +30,7 @@ var mascot = new mongoose.Schema({
 	latitude:Number,
 	longitude:Number,
 	modelUrl:String,
-	names:Array
+	name:String
 
 },{collection:mascotCollection});
 

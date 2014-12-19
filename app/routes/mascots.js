@@ -19,10 +19,9 @@ router.post('/',function(req, res){
     var latitude = req.body.latitude;
     var longitude = req.body.longitude;
     var modelUrl = req.body.modelUrl;
-    var nameItalian = req.body.nameItalian;
-    var nameEnglish = req.body.nameEnglish;
+    var name = req.body.name;
 
-  	mascotsModel.insertMascot(categoryItalian,categoryEnglish,nameItalian,nameEnglish, latitude, longitude, modelUrl, function(mascots){
+  	mascotsModel.insertMascot(categoryItalian,categoryEnglish,name, latitude, longitude, modelUrl, function(mascots){
   		res.render('mascot', {
     	title: 'List of mascots',
     	mascots:mascots});

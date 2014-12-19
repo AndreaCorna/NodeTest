@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 var db = require('./db')
 
-exports.insertMascot = function insertMascot(category_italian,category_english,nameItalian,nameEnglish, latitude_, longitude_, modelUrl_, callback){
+exports.insertMascot = function insertMascot(category_italian,category_english, name_, latitude_, longitude_, modelUrl_, callback){
 	var mascot = mongoose.model(db.modelMascot);
 	var newMascot = {
 		category:[{country:'it',name:category_italian},{country:'en',name:category_english}],
 		latitude:1,
 		longitude:2,
 		modelUrl:modelUrl_,
-		names:[{country:'it',name:nameItalian},{country:'en',name:nameEnglish}]
+		name:name_
 	}
 	db.mascots.insert(newMascot,function(err,inserted){
 		if(err){
