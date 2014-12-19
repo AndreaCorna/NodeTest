@@ -1,16 +1,5 @@
 var mongoose = require( 'mongoose' );
 
-
-
-var test = new mongoose.Schema({
- name: String,
- email: String,
- descrs: Array
-},{ collection : 'test' });
-
-mongoose.model( 'test', test );
-
-
 var modelIngredient = 'ingredient'
 var ingredientCollection = 'ingredients'
 
