@@ -33,11 +33,13 @@ router.get('/', function(req, res){
 
 });
 
+
 router.post('/',function(req, res){
 	var nameItalian = req.body.nameItalian;
 	var nameEnglish = req.body.nameEnglish;
   var category = req.body.category;
   var image = req.body.image;
+
   console.log(category);
   async.parallel([
       function(callback){

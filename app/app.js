@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var ingredients = require('./routes/ingredients');
 var mascots = require('./routes/mascots');
-
+var dishes = require('./routes/dishes');
 
 var db = require('./models/db')
 var http = require('http')
@@ -35,6 +35,7 @@ app.use('/users', users);
 
 app.use('/ingredients',ingredients);
 app.use('/mascots',mascots);
+app.use('/dishes',dishes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
