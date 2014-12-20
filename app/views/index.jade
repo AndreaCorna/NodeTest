@@ -1,8 +1,7 @@
 extends layout
 
-block content
-    #wrapper
-      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+block bar
+  nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
             span.sr-only Toggle navigation
@@ -30,6 +29,11 @@ block content
               a(href='/mascots')
                 i.fa.fa-tasks
                 |  Mascots
+            li
+              a(href='/dishes')
+                i.fa.fa-tasks
+                |  Dishes
+            
             
           |                 
           ul.nav.navbar-nav.navbar-right.navbar-user
@@ -91,7 +95,7 @@ block content
                     i.fa.fa-power-off
                     |  Log Out
       |         
-      #page-wrapper
+block content        
         .row
           .col-lg-12
             h1
@@ -199,96 +203,5 @@ block content
               |                         
               .panel-body
                 #shieldui-grid1
-        // /.row
-      // /#page-wrapper
-    // /#wrapper
-    //
-      This section initializes the chart widgets and a grid component,
-      which visualize records and allow sorting and paging.
-      For more information visit:
-      http://www.shieldui.com/documentation/javascript.chart/getting.started
-      http://www.shieldui.com/documentation/grid/javascript/getting.started
-      http://www.shieldui.com/documentation/datasource/javascript/getting.started
-    script(type='text/javascript').
-      jQuery(function ($) {
-      var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
-      visits = [123, 323, 443, 32],
-      budget = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57],
-      sales = [11, 9, 31, 34, 42, 52, 35, 22, 37, 45, 55, 57];
-      $("#shieldui-chart1").shieldChart({
-      primaryHeader: {
-      text: "Visitors"
-      },
-      exportOptions: {
-      image: false,
-      print: false
-      },
-      dataSeries: [{
-      seriesType: "area",
-      collectionAlias: "Q Data",
-      data: performance
-      }]
-      });
-      $("#shieldui-chart2").shieldChart({
-      primaryHeader: {
-      text: "Logins Per week"
-      },
-      exportOptions: {
-      image: false,
-      print: false
-      },
-      seriesSettings: {
-      donut: {
-      enablePointSelection: true
-      }
-      },
-      dataSeries: [{
-      seriesType: "donut",
-      collectionAlias: "logins",
-      data: visits
-      }]
-      });
-      $("#shieldui-chart3").shieldChart({
-      primaryHeader: {
-      text: "Budget"
-      },
-      dataSeries: [{
-      seriesType: "line",
-      collectionAlias: "Budget",
-      data: budget
-      }]
-      });
-      $("#shieldui-chart4").shieldChart({
-      primaryHeader: {
-      text: "Sales"
-      },
-      dataSeries: [{
-      seriesType: "bar",
-      collectionAlias: "sales",
-      data: sales
-      }]
-      });
-      $("#shieldui-grid1").shieldGrid({
-      dataSource: {
-      data: gridData
-      },
-      sorting: {
-      multiple: true
-      },
-      paging: {
-      pageSize: 12,
-      pageLinksCount: 4
-      },
-      selection: {
-      type: "row",
-      multiple: true,
-      toggle: false
-      },
-      columns: [
-      { field: "id", width: "70px", title: "ID" },
-      { field: "name", title: "Person Name" },
-      { field: "company", title: "Company Name" },
-      { field: "email", title: "Email Address", width: "270px" }
-      ]
-      });
-      });
+      
+    
