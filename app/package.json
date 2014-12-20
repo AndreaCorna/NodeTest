@@ -16,6 +16,6 @@
     "restify": "1.4.x",
     "mongoose": "3.1.0",
     "connect": "2.7.4",
-    "node-google-translate":"git://github.com/mikejholly/node-google-translate.git#master"
+    "mstranslator":"1.1.0"
   }
 }

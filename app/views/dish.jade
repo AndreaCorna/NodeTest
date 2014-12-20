@@ -96,23 +96,31 @@ block bar
       |         
 block content
   form(action='dishes', method='post')
-      | Enter ingredient name italian:
-      input(type='text', name='nameItalian', placeholder='Insert name...')
+      | Enter dish name:
+      input(type='text', name='name', placeholder='Insert name...')
       |                
       br
-      | Enter ingredient name english:
-      input(type='text', name='nameEnglish', placeholder='Insert name...')
+      |Select ingredients:
       |                
-      br
-      |Select category:
-      |                
-      select(name='category')
+      select(name='ingrediets')
         for item in ingredients
           for name in item["names"]
             if name["country"] == 'it'
               option(value=name["name"]) #{name["name"]}
       |                
       br 
+      | Enter nationality:
+      input(type='text', name='nationality', placeholder='Insert name...')
+      |                
+      br
+      | Enter description:
+      input(type='text', name='description', placeholder='Insert name...')
+      |                
+      br
+      | Enter zone:
+      input(type='text', name='zone', placeholder='Insert name...')
+      |                
+      br
       |Enter image name:
       |                
       input(type='text', name='image', placeholder='Insert image...')

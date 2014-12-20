@@ -35,15 +35,14 @@ router.get('/', function(req, res){
 
 
 router.post('/',function(req, res){
-	var nameItalian = req.body.nameItalian;
-	var nameEnglish = req.body.nameEnglish;
+	var name = req.body.name;
   var category = req.body.category;
   var image = req.body.image;
 
   console.log(category);
   async.parallel([
       function(callback){
-          ingredientsModel.insertIngredient(nameItalian,nameEnglish, category, image, function(ingredients){
+          ingredientsModel.insertIngredient(name, category, image, function(ingredients){
             callback(null,ingredients);
           });
       },
