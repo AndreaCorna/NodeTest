@@ -101,12 +101,12 @@ block content
       |                
       br
       |Select ingredients:
-      |                
-      select(name='ingrediets')
-        for item in ingredients
+      |      
+      for item in ingredients
           for name in item["names"]
             if name["country"] == 'it'
-              option(value=name["name"]) #{name["name"]}
+              input(type='checkbox', name='components', value=name["name"])
+              | #{name["name"]}
       |                
       br 
       | Enter nationality:
